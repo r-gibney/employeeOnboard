@@ -1,7 +1,9 @@
 # employeeOnboard
 A simple UI and serverside program for adding and maintaining employees in your organization.
 
-Everything is changeable to your specifications and can be easily edited to fit any data entry application. Make sure an plug your SQL procedures in to the .cs portion of the site. 
+****1st, I realize that one data entry point is logical, but this design has proven in my company to eliminate confusion by dividing both functions into separate entry points.*****
+
+Everything is changeable to your specifications and can be easily edited to fit any data entry application. Make sure and plug your SQL procedures in to the .cs portion of the site. 
 
 Make sure to add your DB credentials to the web.config or the data transfer won't happen. 
 
