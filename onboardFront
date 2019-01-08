@@ -1,0 +1,180 @@
+<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="EmpEntry.aspx.cs" Inherits="EmployeeEntry.WebForm1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"><link href="EmpCss.css" rel="stylesheet" />
+
+
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div id="maindiv">      
+        <div id="newTM" class="auto-style3"> 
+            <h2><u>New Team Members</u></h2>
+            <table ID="table1">
+                <tr>
+                    <td>
+                        <asp:label ID="lbl" CssClass="lbl" runat="server" Text="TM Number:"></asp:label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txt" CssClass="txt" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label ID="lbl1" CssClass="lbl" runat="server" Text="First Name:"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txt1" CssClass="txt" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label ID="lbl2" CssClass="lbl" runat="server" Text="Middle Name:"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txt2" CssClass="txt" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label ID="lbl3" CssClass="lbl" runat="server" Text="Last Name:"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txt3" CssClass="txt" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label ID="lbl4" CssClass="lbl" runat="server" Text="Phone Number:"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txt4" CssClass="txt" runat="server"></asp:TextBox> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label ID="lbl5" CssClass="lbl" runat="server" Text="Hire Date:"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txt5" CssClass="txt" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                    </td>
+                    <td>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Button ID="button" CssClass="button" runat="server" Text="Submit" Height="36px" Width="165px" Font-Bold="true" OnClick="button_Click"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="updateTM" class="auto-style6">
+            <h2 id="h22"><u>Update Team Member</u></h2>
+            <table id="table2">
+                <tr>
+                    <td>
+                        <asp:Label ID="lbl6" CssClass="lbl" runat="server" Text="TM Number:"></asp:Label>
+                    </td>
+                    <td class="auto-style1">
+                        <asp:TextBox ID="txt6" CssClass="txt" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label ID="lbl7" CssClass="lbl" runat="server" Text="First Name:"></asp:Label>
+                    </td>
+                    <td class="auto-style1">
+                        <asp:TextBox ID="txt7" CssClass="txt" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label ID="lbl8" CssClass="lbl" runat="server" Text="Middle Name:"></asp:Label>
+                    </td>
+                    <td class="auto-style1">
+                        <asp:TextBox ID="txt8" CssClass="txt" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label ID="lbl9" CssClass="lbl" runat="server" Text="Last Name:"></asp:Label>
+                    </td>
+                    <td class="auto-style1">
+                        <asp:TextBox ID="txt9" CssClass="txt" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label ID="lbl10" CssClass="lbl" runat="server" Text="Phone Number:"></asp:Label>
+                    </td>
+                    <td class="auto-style1">
+                        <asp:TextBox ID="txt10" CssClass="txt" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label ID="lbl11" CssClass="lbl" runat="server" Text="Assignment:"></asp:Label>
+                    </td>
+                    <td class="auto-style1">
+                        <asp:TextBox ID="txt11" CssClass="txt" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label ID="lbl14" CssClass="lbl" runat="server" Text="Dept. Number:"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txt12" CssClass="txt" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label ID="lbl12" CssClass="lbl" runat="server" Text="Active"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:CheckBox ID="rad1" CssClass="rad" runat="server" Text="Yes" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:CheckBox ID="rad2" CssClass="rad" runat="server" Text="No" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td class="auto-style1">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Button ID="Btn1" Runat="server" CssClass="button" Text="Update" Height="36px" Width="165px" Font-Bold="true" OnClick="Btn1_click" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div ID="assignment">
+            <h2 id="h23"><u>Assignment</u></h2>
+
+            <div id="list1">            
+                <h6>Assignments should follow the below naming convention</h6>
+            <ul>
+                <li>2AC (Area 2 A-Shift Coach)</li>
+                <li>2ATL (Area 2 A-Shift Team Leader)</li>
+                <li>2ATM (Area 2 A-Shift TM)</li>
+                <li>2ATRN (Area 2 A-Shift Trainee)</li>
+            </ul>
+            <ul>
+                <li>1AC (Area 2 A-Shift Coach)</li>
+                <li>1ATL (Area 1 A-Shift Team Leader)</li>
+                <li>1ATM (Area 1 A-Shift TM)</li>
+                <li>1ATRN (Area 1 A-Shift Traniee)</li>
+            </ul>
+            <ul>
+                <li>AC (A-Shift Coach)</li>
+                <li>ATL (A-Shift Team Leader)</li>
+                <li>ATM (A-Shift TM)</li>
+                <li>ATRN (A-Shift Trainee)</li>
+            </ul>
+            <ul>
+                <li>BC (B-Shift Coach)</li>
+                <li>BTL (B-Shift Team Leader)</li>
+                <li>BTM (B-Shift TM)</li>
+                <li>BTRN (B-Shift Trainee)</li>
+            </ul>
+            </div>
+        </div>
+        <div class="newFeedback" id="newFeedback" runat="server">
+            <asp:Label ID="lbl13" CssClass="lbl1" runat="server" Text=""></asp:Label>
+        </div>
+    </div>    
+</asp:Content>
