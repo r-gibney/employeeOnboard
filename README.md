@@ -9,6 +9,6 @@ Make sure to add your DB credentials to the web.config or the data transfer won'
 
 Error messages can be customized to your liking.
 
-If you want to edit and create your own version please make sure and create a branch and don't merge with the main. 
+If you want to edit and create your own version please make sure and create a branch and don't merge with the master branch. 
 
 Enjoy!
