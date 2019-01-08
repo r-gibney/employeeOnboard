@@ -1,0 +1,224 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.Sql;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
+using System.Configuration;
+using System.Drawing;
+using System.Windows.Input;
+
+
+namespace EmployeeEntry
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            DivHide();
+        }
+        public void Clearfields()
+        {
+            txt.Text = "";
+            txt1.Text = "";
+            txt2.Text = "";
+            txt3.Text = "";
+            txt4.Text = "";
+            txt12.Text = "";
+            txt6.Text = "";
+            txt7.Text = "";
+            txt8.Text = "";
+            txt9.Text = "";
+            txt10.Text = "";
+            txt11.Text = "";
+            txt11.Text = "";
+            rad1.Checked = false;
+            rad2.Checked = false;
+        }
+        public void ClearFieldsComplete()
+        {
+            lbl13.Text = "";
+            txt.Text = "";
+            txt1.Text = "";
+            txt2.Text = "";
+            txt3.Text = "";
+            txt4.Text = "";
+            txt12.Text = "";
+            txt6.Text = "";
+            txt7.Text = "";
+            txt8.Text = "";
+            txt9.Text = "";
+            txt10.Text = "";
+            txt11.Text = "";
+            txt11.Text = "";
+            rad1.Checked = false;
+            rad2.Checked = false;
+        }
+        public void DivSurprise()
+        {
+            newFeedback.Visible = true;
+        }
+        public void DivHide ()
+        {
+            newFeedback.Visible = false;
+        }
+
+        protected void button_Click(object sender, EventArgs e)
+        {
+            NewTm();
+        }
+        protected void Btn1_click(object sender, EventArgs e)
+        {
+            UpdateTM();
+        }
+        public void NewTm() {
+            try
+            {
+                if (string.IsNullOrEmpty(txt.Text))
+                {
+                    DivSurprise();
+                    lbl13.Text = "TM Number Required";
+                }
+                if (string.IsNullOrEmpty(txt1.Text))
+                {
+                    DivSurprise();
+                    lbl13.Text = "First Name Required";
+                }
+                if (string.IsNullOrEmpty(txt3.Text))
+                {
+                    DivSurprise();
+                    lbl13.Text = "Last Name Required";
+                }
+
+                else
+                {
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+
+                    SqlCommand command = new SqlCommand("procedure goes here", con)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+
+                    command.Parameters.Add("@teammate_id", SqlDbType.Int).Value = txt.Text;
+                    command.Parameters.Add("@first_name", SqlDbType.NVarChar).Value = txt1.Text;
+                    command.Parameters.Add("@last_name", SqlDbType.NVarChar).Value = txt3.Text;
+                    command.Parameters.Add("@active", SqlDbType.Bit).Value = 1;
+
+                    if (txt2.Text == "")
+                    {
+                        command.Parameters.Add("@middle_name", SqlDbType.NVarChar).Value = 0;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@middle_name", SqlDbType.NVarChar).Value = txt2.Text;
+                    }
+                    if (txt4.Text == "")
+                    {
+                        command.Parameters.Add("@phone", SqlDbType.NVarChar).Value = 0;
+                    }
+                    else
+                    {
+                        command.Parameters.Add("@phone", SqlDbType.NVarChar).Value = txt4.Text;
+                    }
+
+                    con.Open();
+                    command.ExecuteNonQuery();
+                    con.Close();
+
+                    DivSurprise();
+                    lbl13.Text = txt1.Text + " " + txt3.Text + " is now a BMU Team Member!";
+                    lbl13.ForeColor = Color.Green;
+                }
+                Clearfields();
+            }
+               
+            catch (SqlException ex)
+            {
+                DivSurprise();
+                lbl13.Text = ex.Message;
+                lbl13.ForeColor = Color.Red;
+                Clearfields();
+            }
+        }
+
+        public void UpdateTM()
+        {
+            try
+            {
+                if (txt6.Text == "")
+                {
+                    lbl13.Text = "TM Number Required";
+                }
+                if (txt7.Text == "")
+                {
+                    lbl13.Text = "First Name Required";
+                }
+                if (txt9.Text == "")
+                {
+                    lbl13.Text = "Last Name Required";
+                }
+                if (txt11.Text == "")
+                {
+                    lbl13.Text = "Assignment Required";
+                }
+                else
+                {
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+                    SqlCommand com = new SqlCommand("update procedure goes here", con);
+                    com.CommandType = CommandType.StoredProcedure;
+
+                    com.Parameters.Add("@teammate_id", SqlDbType.Int).Value = txt6.Text;
+                    com.Parameters.Add("@first_name", SqlDbType.NVarChar).Value = txt7.Text;
+                    com.Parameters.Add("@last_name", SqlDbType.NVarChar).Value = txt9.Text;
+                    com.Parameters.Add("@role", SqlDbType.NVarChar).Value = txt11.Text;
+                    com.Parameters.Add("@dept", SqlDbType.Int).Value = txt12.Text;
+
+                    if (txt8.Text == "")
+                    {
+                        com.Parameters.Add("@middle_name", SqlDbType.Int).Value = 0;
+                    }
+                    else
+                    {
+                        com.Parameters.Add("@middle_name", SqlDbType.Int).Value = txt8.Text;
+                    }
+                    if (txt10.Text == "")
+                    {
+                        com.Parameters.Add("@phone", SqlDbType.Int).Value = 0;
+                    }
+                    else
+                    {
+                        com.Parameters.Add("@phone", SqlDbType.Int).Value = txt10.Text;
+                    }
+                    if (rad1.Checked)
+                    {
+                        com.Parameters.Add("@active", SqlDbType.Bit).Value = 1;
+                    }
+                    else if (rad2.Checked)
+                    {
+                        com.Parameters.Add("@active", SqlDbType.Bit).Value = 0;
+                    }
+
+                    con.Open();
+                    com.ExecuteNonQuery();
+                    con.Close();
+
+                    DivSurprise();
+                    lbl13.Text = txt7.Text + " " + txt9.Text + " has been updated!";
+                    lbl13.ForeColor = Color.Green;
+                }
+                Clearfields();
+            }
+            catch (SqlException ex)
+            {
+                DivSurprise();
+                lbl13.Text = ex.Message;
+                lbl13.ForeColor = Color.Red;
+                Clearfields();
+            }
+        }
+    }
+}
