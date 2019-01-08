@@ -1,0 +1,155 @@
+@import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+
+
+body {
+    background-color: #272727;
+}
+
+#maindiv {
+    width: 70%;
+    height: 0%;
+    position: absolute;
+    top: 37%;
+}
+h1 {
+    position: relative;
+    top: 120%;
+    left: 1%;
+    letter-spacing: 10px;
+    font-size: 8em;
+    font-family: Fjalla One;
+    color: #747474;
+}
+h2 {
+    position: relative;
+    top: 0%;
+    left: 8%;
+    letter-spacing: 10px;
+    font-size: 2em;
+    font-family: Fjalla One;
+    color: #747474;
+}
+h6 {
+    position: relative;
+    left: 0%;
+    font-family: Fjalla One;
+    color: #747474;
+    font-size: 1.3em;
+    text-align: center;
+}
+li {
+    font-family: Fjalla One;
+    color: #747474;
+    font-size: 1em;
+}
+#h22 {
+    position: relative;
+    top: 0%;
+    left: 6%;
+    letter-spacing: 10px;
+    font-size: 2em;
+    font-family: Fjalla One;
+    color: #747474;
+}
+#h23 {
+    padding: 1%;
+    position: relative;
+    top: 1%;
+    left: 7%;
+    letter-spacing: 10px;
+    font-size: 2em;
+    font-family: Fjalla One;
+    color: #747474;
+}
+
+#newTM {
+    padding: 1%;
+    background-color: #272727;
+    border: 2px solid #14A76C;
+    height: 50vh;
+    width: 50vh;
+    border-radius: 15px;
+}
+
+#updateTM {
+    padding: 1%;
+    position: absolute;
+    left: 100%;
+    top: 0%;
+    background-color: #272727;
+    border: 2px solid #ff652f;
+    height: 50vh;
+    width: 500px;
+    border-radius: 15px;
+}
+#assignment {
+    position: absolute;
+    background-color: #272727;
+    border: 2px solid #FFE400;
+    height: 60vh;
+    width: 30vh;
+    border-radius: 15px;
+    left: 57%;
+    top: 0%;
+}
+ul {
+    list-style-type: circle;
+    color: #747474;
+}
+.lbl {
+    font-family: Fjalla One;
+    font-size: 1.5em;
+    color: #747474;
+}
+.txt {
+    font-family: Fjalla One;
+    font-size: 1.5em;
+    background-color: #747474;
+    color: #ff652f;
+    border: none;
+    border-radius: 4px;
+}
+.txt:focus {
+    border: solid 1px #14A76C;
+}
+.button {
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    background-color: #ff652f;
+    color: black;
+    font-family: Fjalla One;
+    font-size: 1em;
+    font-weight: 300;
+    letter-spacing: 5px;
+}
+.rad {
+    font-family: Fjalla One;
+    font-size: 1.5em;
+    color: #747474;
+}
+.btnTD {
+    width: 20%;
+}
+#list1 {
+    position: absolute;
+    bottom: -1%;
+}
+.newFeedback {
+    padding: 1%;
+    border: 2px solid #ffd800;
+    border-radius: 15px;
+    position: absolute;
+    bottom: 18%;
+    left: 1%;
+    height: 5vh;
+    width: 188vh;
+    font-family: Fjalla One;
+    text-align: center;
+    font-size: x-large;
+}
+.lbl1 {
+    font-family: Fjalla One;
+    color: #ff0000;
+    font-size: 1.7em;
+}
